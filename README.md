@@ -7,3 +7,4 @@ I was tasked with creating a random password generator. I created a requirement 
 ![Screenshot (18)](https://github.com/acolin96/challenge-02-javascript/assets/132381469/ddc82624-d101-478a-a0ee-7a28b01f27fc)
 
 ## Links
+https://github.com/acolin96/challenge-02-javascript
