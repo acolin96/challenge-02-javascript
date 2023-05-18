@@ -1,24 +1,9 @@
-// // Assignment Code
-// var generateBtn = document.querySelector("#generate");
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Function to prompt user for password criteria and generate password
 function generatePassword() {
-  // Character sets to use for password generation
+  // Creates the character sets (lowercase, uppercase, number, special)
   var charSets = {
     lowercase: "abcdefghijklmnopqrstuvwxyz",
     uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -26,7 +11,7 @@ function generatePassword() {
     special: "!@#$%^&*()_+-={}[]|\\:;\"',.?/~`"
   };
 
-  // Prompt user for password length
+  // Prompt user for password character length. Had to use google to find the parseInt but that is what ties the number value stored in the passlength.
   var passLength = parseInt(prompt("Enter password length (between 8 and 128 characters):"));
   
   if (isNaN(passLength) || passLength < 8 || passLength > 128) {
@@ -34,17 +19,17 @@ function generatePassword() {
     return;
   }
 
-  // Prompt user for character types to include in password
+  // Prompt user for character types to include in password. I feel like there is an easier way to do this but i dont know how.
   var useLowercase = confirm("Include lowercase letters?");
   var useUppercase = confirm("Include uppercase letters?");
   var useNumeric = confirm("Include numeric characters?");
   var useSpecial = confirm("Include special characters?");
 
-  // Make sure at least one character type is selected
-  if (!useLowercase && !useUppercase && !useNumeric && !useSpecial) {
-    alert("You must select at least one character type!");
-    return;
-  }
+  // Make sure at least one character type is selected. I'll be honest I googled this one. I struggle to understand the use of "!" before the variable name. What I think it does is display the alert if they dont choose any of these but still select a password length.
+   if (!useLowercase && !useUppercase && !useNumeric && !useSpecial) {
+     alert("You must select at least one character type!");
+     return;
+   }
 
   // Build character set based on user selections
   var charSet = "";
@@ -61,7 +46,7 @@ function generatePassword() {
     charSet += charSets.special;
   }
 
-  // Generate password using selected character set and length
+  // Generate password using the characters we made variables and adding the length.
   var password = "";
   for (var i = 0; i < passLength; i++) {
     password += charSet.charAt(Math.floor(Math.random() * charSet.length));
@@ -69,7 +54,7 @@ function generatePassword() {
 
   return password;
 }
-
+//This selects the the element with the password id and the passwordText stores the value to the element?
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
