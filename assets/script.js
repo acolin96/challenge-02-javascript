@@ -15,7 +15,7 @@ function generatePassword() {
   var passLength = parseInt(prompt("Enter password length (between 8 and 128 characters):"));
   
   if (isNaN(passLength) || passLength < 8 || passLength > 128) {
-    alert("Invalid password length! Please enter a number between 8 and 128.");
+    alert("Invalid password length!!! Please enter a number between 8 and 128.");
     return;
   }
 
@@ -46,7 +46,7 @@ function generatePassword() {
     charSet += charSets.special;
   }
 
-  // Generate password using the characters we made variables and adding the length.
+  // Generate password using the characters we made variables and adding the length. 
   var password = "";
   for (var i = 0; i < passLength; i++) {
     password += charSet.charAt(Math.floor(Math.random() * charSet.length));
@@ -54,7 +54,7 @@ function generatePassword() {
 
   return password;
 }
-//This selects the the element with the password id and the passwordText stores the value to the element?
+//This selects the the element with the password id and the passwordText stores the value to the element i believe?
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
