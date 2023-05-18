@@ -8,3 +8,5 @@ I was tasked with creating a random password generator. I created a requirement 
 
 ## Links
 https://github.com/acolin96/challenge-02-javascript
+
+https://acolin96.github.io/challenge-02-javascript/
